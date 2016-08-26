@@ -33,18 +33,18 @@
                 </tr>
                 <tr ng-repeat="row in seatsWidgetObj">
                     <td style="padding-top:20px;">{{rowSeries[$index]}}</td>
-                    <td><span ng-class="{booked:row[$index][0].booked, available: !row[$index][0].selected, choosen: row[$index][0].selected && !row[$index][0].booked}" ng-click="checkThis($index, 0)"></span></td>
-                    <td><span ng-class="{booked:row[$index][1].booked, available: !row[$index][1].selected, choosen: row[$index][1].selected && !row[$index][1].booked}" ng-click="checkThis($index, 1)"></span></td>
-                    <td><span ng-class="{booked:row[$index][2].booked, available: !row[$index][2].selected, choosen: row[$index][2].selected && !row[$index][2].booked}" ng-click="checkThis($index, 2)"></span></td>
-                    <td><span ng-class="{booked:row[$index][3].booked, available: !row[$index][3].selected, choosen: row[$index][3].selected && !row[$index][3].booked}" ng-click="checkThis($index, 3)"></span></td>
-                    <td><span ng-class="{booked:row[$index][4].booked, available: !row[$index][4].selected, choosen: row[$index][4].selected && !row[$index][4].booked}" ng-click="checkThis($index, 4)"></span></td>
-                    <td class="col5"><span ng-class="{booked:row[$index][5].booked, available: !row[$index][5].selected, choosen: row[$index][5].selected && !row[$index][5].booked}" ng-click="checkThis($index, 5)"></span></td>
-                    <td><span ng-class="{booked:row[$index][6].booked, available: !row[$index][6].selected, choosen: row[$index][6].selected && !row[$index][6].booked}" ng-click="checkThis($index, 6)"></span></td>
-                    <td><span ng-class="{booked:row[$index][7].booked, available: !row[$index][7].selected, choosen: row[$index][7].selected && !row[$index][7].booked}" ng-click="checkThis($index, 7)"></span></td>
-                    <td><span ng-class="{booked:row[$index][8].booked, available: !row[$index][8].selected, choosen: row[$index][8].selected && !row[$index][8].booked}" ng-click="checkThis($index, 8)"></span></td>
-                    <td><span ng-class="{booked:row[$index][9].booked, available: !row[$index][9].selected, choosen: row[$index][9].selected && !row[$index][9].booked}" ng-click="checkThis($index, 9)"></span></td>
-                    <td><span ng-class="{booked:row[$index][10].booked, available: !row[$index][10].selected, choosen: row[$index][10].selected && !row[$index][10].booked}" ng-click="checkThis($index, 10)"></span></td>
-                    <td><span ng-class="{booked:row[$index][11].booked, available: !row[$index][11].selected, choosen: row[$index][11].selected && !row[$index][11].booked}" ng-click="checkThis($index, 11)"></span></td>
+                    <td><span ng-class="{booked:row[$index][0].booked, available: !row[$index][0].selected, choosen: row[$index][0].selected && !row[$index][0].booked}" ng-click="selectThis($index, 0)"></span></td>
+                    <td><span ng-class="{booked:row[$index][1].booked, available: !row[$index][1].selected, choosen: row[$index][1].selected && !row[$index][1].booked}" ng-click="selectThis($index, 1)"></span></td>
+                    <td><span ng-class="{booked:row[$index][2].booked, available: !row[$index][2].selected, choosen: row[$index][2].selected && !row[$index][2].booked}" ng-click="selectThis($index, 2)"></span></td>
+                    <td><span ng-class="{booked:row[$index][3].booked, available: !row[$index][3].selected, choosen: row[$index][3].selected && !row[$index][3].booked}" ng-click="selectThis($index, 3)"></span></td>
+                    <td><span ng-class="{booked:row[$index][4].booked, available: !row[$index][4].selected, choosen: row[$index][4].selected && !row[$index][4].booked}" ng-click="selectThis($index, 4)"></span></td>
+                    <td class="col5"><span ng-class="{booked:row[$index][5].booked, available: !row[$index][5].selected, choosen: row[$index][5].selected && !row[$index][5].booked}" ng-click="selectThis($index, 5)"></span></td>
+                    <td><span ng-class="{booked:row[$index][6].booked, available: !row[$index][6].selected, choosen: row[$index][6].selected && !row[$index][6].booked}" ng-click="selectThis($index, 6)"></span></td>
+                    <td><span ng-class="{booked:row[$index][7].booked, available: !row[$index][7].selected, choosen: row[$index][7].selected && !row[$index][7].booked}" ng-click="selectThis($index, 7)"></span></td>
+                    <td><span ng-class="{booked:row[$index][8].booked, available: !row[$index][8].selected, choosen: row[$index][8].selected && !row[$index][8].booked}" ng-click="selectThis($index, 8)"></span></td>
+                    <td><span ng-class="{booked:row[$index][9].booked, available: !row[$index][9].selected, choosen: row[$index][9].selected && !row[$index][9].booked}" ng-click="selectThis($index, 9)"></span></td>
+                    <td><span ng-class="{booked:row[$index][10].booked, available: !row[$index][10].selected, choosen: row[$index][10].selected && !row[$index][10].booked}" ng-click="selectThis($index, 10)"></span></td>
+                    <td><span ng-class="{booked:row[$index][11].booked, available: !row[$index][11].selected, choosen: row[$index][11].selected && !row[$index][11].booked}" ng-click="selectThis($index, 11)"></span></td>
                 </tr>
             </table>
         </div>
