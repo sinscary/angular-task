@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" ng-app="ticketBookingApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Movie Hall seat reservation system</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body ng-controller="mainController">
+    <div class="row">
+        <div class="col-md-12">
+            <h3><center>Popcorn Time</center></h3>
+            <form style="text-align:center;">
+                <span>
+                    <input type="text" class="inputbox" ng-model="userName" required />
+                    <input type="text" class="inputbox" ng-model="noOfSeats" required />
+                    <button class="btn btn-primary" ng-click="startSelecting()" type="submit">Start Selecting</button>
+                </span>            
+            </form>
+        </div>
+    </div>
+    <div class="selectionwidget">
+        <div class="bluescreen">
+             
+        </div>
+        <div class="seatsarea">            
+            <table class="seats">
+                <tr>
+                    <th></th><th>1</th><th>2</th><th>3</th><th>4</th>
+                    <th>5</th>
+                    <th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th>
+                </tr>
+                <tr ng-repeat="row in seatsWidgetObj">
+                    <td style="padding-top:20px;">{{rowSeries[$index]}}</td>
+                    <td><span ng-class="{booked:row[$index][0].booked, available: !row[$index][0].selected, choosen: row[$index][0].selected && !row[$index][0].booked}" ng-click="checkThis($index, 0)"></span></td>
+                    <td><span ng-class="{booked:row[$index][1].booked, available: !row[$index][1].selected, choosen: row[$index][1].selected && !row[$index][1].booked}" ng-click="checkThis($index, 1)"></span></td>
+                    <td><span ng-class="{booked:row[$index][2].booked, available: !row[$index][2].selected, choosen: row[$index][2].selected && !row[$index][2].booked}" ng-click="checkThis($index, 2)"></span></td>
+                    <td><span ng-class="{booked:row[$index][3].booked, available: !row[$index][3].selected, choosen: row[$index][3].selected && !row[$index][3].booked}" ng-click="checkThis($index, 3)"></span></td>
+                    <td><span ng-class="{booked:row[$index][4].booked, available: !row[$index][4].selected, choosen: row[$index][4].selected && !row[$index][4].booked}" ng-click="checkThis($index, 4)"></span></td>
+                    <td class="col5"><span ng-class="{booked:row[$index][5].booked, available: !row[$index][5].selected, choosen: row[$index][5].selected && !row[$index][5].booked}" ng-click="checkThis($index, 5)"></span></td>
+                    <td><span ng-class="{booked:row[$index][6].booked, available: !row[$index][6].selected, choosen: row[$index][6].selected && !row[$index][6].booked}" ng-click="checkThis($index, 6)"></span></td>
+                    <td><span ng-class="{booked:row[$index][7].booked, available: !row[$index][7].selected, choosen: row[$index][7].selected && !row[$index][7].booked}" ng-click="checkThis($index, 7)"></span></td>
+                    <td><span ng-class="{booked:row[$index][8].booked, available: !row[$index][8].selected, choosen: row[$index][8].selected && !row[$index][8].booked}" ng-click="checkThis($index, 8)"></span></td>
+                    <td><span ng-class="{booked:row[$index][9].booked, available: !row[$index][9].selected, choosen: row[$index][9].selected && !row[$index][9].booked}" ng-click="checkThis($index, 9)"></span></td>
+                    <td><span ng-class="{booked:row[$index][10].booked, available: !row[$index][10].selected, choosen: row[$index][10].selected && !row[$index][10].booked}" ng-click="checkThis($index, 10)"></span></td>
+                    <td><span ng-class="{booked:row[$index][11].booked, available: !row[$index][11].selected, choosen: row[$index][11].selected && !row[$index][11].booked}" ng-click="checkThis($index, 11)"></span></td>
+                </tr>
+            </table>
+        </div>
+        <div style="text-align:center; margin-top:20px;"><button class="btn btn-primary" title="Confirm selection" ng-click="confirmSelection()" type="submit">Confirm Booking</button></div>
+    </div>
+    <div class="row" style="margin-top:20px;">
+        <div class="col-md-offset-3" style="width:50%;">
+            <table border="1" style="width:100%">
+                <tr>
+                    <th>Name</th>
+                    <th>Seat Count</th>
+                    <th>Seat Details</th>
+                </tr>
+                <tr ng-repeat="user in users">
+                    <td>{{user.name}}</td>
+                    <td>{{user.seatsRequired}}</td>
+                    <td>{{user.bookedseats}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

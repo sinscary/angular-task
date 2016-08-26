@@ -1,0 +1,86 @@
+﻿* {
+    box-sizing:border-box;
+}
+
+html{
+    height: 120%;
+}
+
+body{
+    width:90%;
+    min-height: 100%;
+}
+
+.inputbox{
+    height:35px;
+    width: 200px;
+    margin-right: 50px;
+}
+
+.btn-primary{
+    background-color: #000;
+    border-color: #000;
+    border-radius: 0 0 0;
+}
+
+.btn-primary:hover,.btn-primary:focus,.btn-primary:active{
+    color:#fff;
+    background-color: #000;
+    border-color: #000;
+    border-radius: 0 0 0;
+}
+
+.selectionwidget {
+    padding-top: 20px;
+    width:50%;
+    margin:0 auto;
+}
+
+.seatsarea{
+    padding-left: 50px;
+    width:90%;
+}
+
+.bluescreen {
+    margin-top: 20px;
+    padding: 15px 0 15px 0;
+    background: #099BDB;            
+
+}
+.seats {
+    width: 100%;
+    margin-top: 20px;
+}
+tr,th {
+    text-align:center;
+}
+       
+span.available{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin-top: 20px;
+    vertical-align:middle;
+    border: 1px solid black;
+    cursor:pointer;
+}
+span.booked {
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin-top: 20px;
+    vertical-align:middle;            
+    cursor:pointer;
+    border: 1px solid black;
+    background: red;
+}
+span.choosen {
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin-top: 20px;
+    vertical-align:middle;            
+    cursor:pointer;
+    border: 1px solid black;
+    background: green;
+}
