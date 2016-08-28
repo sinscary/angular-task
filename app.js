@@ -27,8 +27,6 @@ ticketBookingApp.controller("mainController", ["$scope", "$rootScope", function 
         if ($scope.userName !== "" && $scope.noOfSeats > 0) {
             /*Check if the seats are available*/
             if ($scope.noOfSeats > (120 - $scope.totalSeatsBooked)) { window.alert("Entered number of seats not available! "); return; }
-            /*Save the user data*/
-            $scope.users.push({ name: $scope.userName, seatsRequired: $scope.noOfSeats, bookedseats:"" });
             $scope.usersession = true;
         }
     }
@@ -58,7 +56,7 @@ ticketBookingApp.controller("mainController", ["$scope", "$rootScope", function 
     $scope.confirmSelection = function () {
         if ($scope.usersession) { /*User detail check*/
             if ($scope.seatsChoosen.length == $scope.noOfSeats) { /*Check for the exact number of seats which was entered during registration*/
-                var tmp, seatsStr = "";
+                var seatsStr = "";
                 for (var j = 0, len = $scope.seatsChoosen.length; j < len; j++) {
                     var thisRow = $scope.seatsChoosen[j].row;
                     var thisCol = $scope.seatsChoosen[j].col;
@@ -69,9 +67,7 @@ ticketBookingApp.controller("mainController", ["$scope", "$rootScope", function 
                         seatsStr = seatsStr.slice(0, -2); /*remove last comma*/
                     }
                 }
-                tmp = $scope.users.pop();
-                tmp.bookedseats = seatsStr; /*Map the seat number array to the current user*/
-                $scope.users.push(tmp);
+                $scope.users.push({ name: $scope.userName, seatsRequired: $scope.noOfSeats, bookedseats: seatsStr })
                 $scope.totalSeatsBooked += $scope.noOfSeats; /*Update the booked seat count*/
                 /*Clear the session specific data*/
                 $scope.usersession = false;
